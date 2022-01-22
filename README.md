@@ -18,3 +18,4 @@ Third Round: Future
 Same Idea as above.
 Or maybe have future card trump all other cards to where if it’s a good card- player automatically wins despite score accumulated till that point.
 If its not a good card, then it will take the sum of all three cards, and based on score will let player know if won or lost.# Unit1Project
+# Unit1Project
