@@ -52,31 +52,56 @@ const getRandom = () => {
     }
 }
 
-// let currentCard = getRandom();
-// console.log(currentCard);
-
 //EVENT LISTENERS
 
+// firstDraw.
+
+let pic1 = document.querySelector(".first")
+let firstH1 = document.querySelector(".firstH1")
 firstDraw.addEventListener("click", (evt) => {
     const card = getRandom();
-    firstDraw.innerHTML = `<h1>${card.name}</h1>`
-    document.querySelector(".first-draw").src = card
-
-    // firstDraw.
+    firstH1.textContent = `${card.name}`
+    pic1.src = `${card.link}`
 })
 
+// firstDraw.addEventListener("click", (evt) => {
+//     const card = getRandom();
+//     firstDraw.innerHTML = `<h1>${card.name}</h1>`
+//     firstDraw.style.backgroundImage = `url(${card.link})`
+// })
+
+//secondDraw.
+
+let pic2 = document.querySelector(".second")
+let secondH1 = document.querySelector(".secondH1")
 secondDraw.addEventListener("click", (evt) => {
     const card = getRandom();
-    secondDraw.innerHTML = `<h1>${card.name}</h1>`
-    secondDraw.style.backgroundImage = `url(${card.link})`
-
+    secondH1.textContent = `${card.name}`
+    pic2.src = `${card.link}`
 })
 
+// secondDraw.addEventListener("click", (evt) => {
+//     const card = getRandom();
+//     secondDraw.innerHTML = `<h1>${card.name}</h1>`
+//     secondDraw.style.backgroundImage = `url(${card.link})`
+
+// })
+
+//thirdDraw.
+
+let pic3 = document.querySelector(".third")
+let thirdH1 = document.querySelector(".thirdH1")
 thirdDraw.addEventListener("click", (evt) => {
     const card = getRandom();
-    thirdDraw.innerHTML = `<h1>${card.name}</h1>`
-    thirdDraw.style.backgroundImage = `url(${card.link})`
+    thirdH1.textContent = `${card.name}`
+    pic3.src = `${card.link}`
 })
+
+// thirdDraw.addEventListener("click", (evt) => {
+//     const card = getRandom();
+//     thirdDraw.innerHTML = `<h1>${card.name}</h1>`
+//     thirdDraw.style.backgroundImage = `url(${card.link})`
+// })
 
 
 

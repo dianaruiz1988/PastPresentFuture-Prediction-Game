@@ -5,8 +5,7 @@
   
     grid-template-areas:
       "header header header"
-      "nav blog blog"
-      "nav blog blog"
+      "blog blog blog"
       "footer footer footer"
   }
   .child{
@@ -15,13 +14,6 @@
   .header{
     grid-area: header;
   }
-  .nav{
-    grid-area:nav;
-    display:flex;
-    flex-direction:column;
-    padding:1%;
-    
-  }
   .blog{
     grid-area: blog;
     display:flex;
@@ -29,7 +21,10 @@
   .footer{
     grid-area: footer;
   }
-  
+  img{
+    height: 300px;
+    width: 200px;
+  }
   .flex-items{
     border: solid 1px white;
     flex: 1;
