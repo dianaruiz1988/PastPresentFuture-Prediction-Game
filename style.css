@@ -1,0 +1,45 @@
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 100fr 1fr;
+    grid-template-rows: 100px 800px 100px;
+  
+    grid-template-areas:
+      "header header header"
+      "nav blog blog"
+      "nav blog blog"
+      "footer footer footer"
+  }
+  .child{
+    border:solid;
+  }
+  .header{
+    grid-area: header;
+  }
+  .nav{
+    grid-area:nav;
+    display:flex;
+    flex-direction:column;
+    padding:1%;
+    
+  }
+  .blog{
+    grid-area: blog;
+    display:flex;
+  }
+  .footer{
+    grid-area: footer;
+  }
+  
+  .flex-items{
+    border: solid 1px white;
+    flex: 1;
+    height:100%;
+    background: rgb(255, 166, 0);
+    
+  }
+  
+  nav > a {
+    border:solid;
+    flex:1;
+    margin:1%;
+  }
