@@ -5,6 +5,18 @@ const firstDraw = document.getElementById("first-draw");
 const secondDraw = document.getElementById("second-draw")
 const thirdDraw = document.getElementById("third-draw")
 
+let pic1 = document.querySelector(".first")
+let firstH1 = document.querySelector(".firstH1")
+let description1 = document.querySelector(".description1")
+
+let pic2 = document.querySelector(".second")
+let secondH1 = document.querySelector(".secondH1")
+let description2 = document.querySelector(".description2")
+
+let pic3 = document.querySelector(".third")
+let thirdH1 = document.querySelector(".thirdH1")
+let description3 = document.querySelector(".description3")
+
 //CREATE DECK and CONSTANT PLAYER
 class MajorArcana {
     constructor(name, description, points, link) {
@@ -43,7 +55,7 @@ const card22 = new MajorArcana('The World', 'completion,the end of a journey,gra
 const deckArray = [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10,
     card11, card12, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22];
 
-//FUNCTIONS========================================================================================
+//FUNCTIONS========================================================================================================================
 const getRandom = () => {
     let random = Math.floor(Math.random() * deckArray.length);
     if (deckArray[random].play === false) {
@@ -52,66 +64,69 @@ const getRandom = () => {
     }
 }
 
-//EVENT LISTENERS
+//EVENT LISTENERS=================================================================================================================
 
 // firstDraw.
 
-let pic1 = document.querySelector(".first")
-let firstH1 = document.querySelector(".firstH1")
+
 firstDraw.addEventListener("click", (evt) => {
     const card = getRandom();
     firstH1.textContent = `${card.name}`
     pic1.src = `${card.link}`
+    description1.textContent = `${card.description}`
 })
 
-// firstDraw.addEventListener("click", (evt) => {
-//     const card = getRandom();
-//     firstDraw.innerHTML = `<h1>${card.name}</h1>`
-//     firstDraw.style.backgroundImage = `url(${card.link})`
-// })
+//WHAT I WANT TO HAPPEN AFTER PLAYER DRAWS FIRST CARD 
+
+// i need the computer to store the result of the first random card drawn and keep it on the screen unless player quits/resets game.
+//  then after i have saved that result in a variable, i want to use the result of the random card pulled from the first draw to 
+// say:
+
+//if this card is less than 3 points - Oracle/spirit guides will prompt a message to user that says
+// this card shows that in your past you may have struggled within your spiritual journey,
+//  would you like to continue to the second round to reveal the present situation within your spiritual journey?
+// or would you like to retreat?
+
+// need a button to retreat the game and reset it/start over or continue
+
+// if player chooses continue then prompt player to click on card 2 
+
+//else if card points are higher than 3- SAY- your card is higher than three points, you will automatically
+//advance to next round 
+
 
 //secondDraw.
 
-let pic2 = document.querySelector(".second")
-let secondH1 = document.querySelector(".secondH1")
 secondDraw.addEventListener("click", (evt) => {
     const card = getRandom();
     secondH1.textContent = `${card.name}`
     pic2.src = `${card.link}`
+    description2.textContent = `${card.description}`
 })
 
-// secondDraw.addEventListener("click", (evt) => {
-//     const card = getRandom();
-//     secondDraw.innerHTML = `<h1>${card.name}</h1>`
-//     secondDraw.style.backgroundImage = `url(${card.link})`
 
-// })
 
-//thirdDraw.
+//thirdDraw
 
-let pic3 = document.querySelector(".third")
-let thirdH1 = document.querySelector(".thirdH1")
 thirdDraw.addEventListener("click", (evt) => {
     const card = getRandom();
     thirdH1.textContent = `${card.name}`
     pic3.src = `${card.link}`
+    description3.textContent = `${card.description}`
 })
 
-// thirdDraw.addEventListener("click", (evt) => {
-//     const card = getRandom();
-//     thirdDraw.innerHTML = `<h1>${card.name}</h1>`
-//     thirdDraw.style.backgroundImage = `url(${card.link})`
-// })
 
 
 
 
 
 
-//try to get first DRAW BUTTON to work and pulls a random card from the DeckArray 
-//make it show in the DOM
+
+
 //Create player constant variable
 //give set points
+
+
 // the points the player has accumulated or lost will determine outcome of win/lose of game
 //Repeat the code/function from Draw 1 to select Random Card for Draw 2-Present
 // select random card for Draw 3- Future

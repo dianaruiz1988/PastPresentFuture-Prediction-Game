@@ -1,7 +1,7 @@
 .parent {
     display: grid;
     grid-template-columns: 1fr 100fr 1fr;
-    grid-template-rows: 100px 800px 100px;
+    grid-template-rows: 100px 600px 200px;
   
     grid-template-areas:
       "header header header"
@@ -38,3 +38,7 @@
     flex:1;
     margin:1%;
   }
+
+
+
+  
