@@ -64,16 +64,21 @@ const getRandom = () => {
         return deckArray[random];
     }
 }
+let playerScore = document.getElementById("player-score")
 
-const cardOne = getRandom();
-const cardTwo = getRandom();
-const cardThree = getRandom();
+const cardOne = 0;
+const cardTwo = 0;
+const cardThree = 0;
+
 
 let playerGame = () => {
-    var gameTotal = 12;
+    var gameTotal = 0;
     var playerRound1 = cardOne.points
     var playerRound2 = cardTwo.points
     var playerRound3 = cardThree.points
+    gameTotal += playerRound1 + playerRound2 + playerRound3
+    console.log(playerRound1, playerRound2, playerRound3)
+    playerScore.textContent = " " + gameTotal
     return gameTotal + playerRound1 + playerRound2 + playerRound3
 }
 
@@ -98,6 +103,7 @@ firstDraw.addEventListener("click", (evt) => {
     pic1.src = `${cardOne.link}`
     description1.textContent = `${cardOne.description}`
     var playerRound1 = `${cardOne.points}`
+    console.log(playerRound1)
     playerGame();
 })
 
