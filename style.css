@@ -1,38 +1,38 @@
 .parent {
     display: grid;
     grid-template-columns: 1fr 100fr 1fr;
-    grid-template-rows: 100px 600px 200px;
+    grid-template-rows: 200px 600px 100px;
   
     grid-template-areas:
       "header header header"
       "blog blog blog"
       "footer footer footer"
   }
-  .child{
+  .child {
     border:solid;
   }
-  .header{
+  .header {
     grid-area: header;
   }
-  .blog{
+  .blog {
     grid-area: blog;
     display:flex;
   }
-  .footer{
+  .footer {
     grid-area: footer;
   }
-  img{
+  img {
     height: 300px;
     width: 200px;
   }
-  .flex-items{
+  .flex-items {
     border: solid 1px white;
     flex: 1;
     height:100%;
     background: rgb(255, 166, 0);
+  
     
   }
-  
   nav > a {
     border:solid;
     flex:1;

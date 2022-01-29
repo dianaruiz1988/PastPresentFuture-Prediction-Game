@@ -65,43 +65,67 @@ const getRandom = () => {
     }
 }
 
+const cardOne = getRandom();
+const cardTwo = getRandom();
+const cardThree = getRandom();
+
 let playerGame = () => {
     var gameTotal = 12;
-    var playerRound = card.points
-    return gameTotal + playerRound
+    var playerRound1 = cardOne.points
+    var playerRound2 = cardTwo.points
+    var playerRound3 = cardThree.points
+    return gameTotal + playerRound1 + playerRound2 + playerRound3
 }
+
+let winGame = () => {
+    if (gameTotal >= 10);
+    return alert("You won")
+}
+
+let loseGame = () => {
+    if (gameTotal < 10);
+    return alert("you lost")
+}
+
 
 //EVENT LISTENERS=================================================================================================================
 
 // firstDraw.
 
 firstDraw.addEventListener("click", (evt) => {
-    const card = getRandom();
-    firstH1.textContent = `${card.name}`
-    pic1.src = `${card.link}`
-    description1.textContent = `${card.description}`
-    var playerRound = card.points
+    const cardOne = getRandom();
+    firstH1.textContent = `${cardOne.name}`
+    pic1.src = `${cardOne.link}`
+    description1.textContent = `${cardOne.description}`
+    var playerRound1 = `${cardOne.points}`
     playerGame();
 })
 
 //secondDraw.
 
 secondDraw.addEventListener("click", (evt) => {
-    const card = getRandom();
-    secondH1.textContent = `${card.name}`
-    pic2.src = `${card.link}`
-    description2.textContent = `${card.description}`
+    const cardTwo = getRandom();
+    secondH1.textContent = `${cardTwo.name}`
+    pic2.src = `${cardTwo.link}`
+    description2.textContent = `${cardTwo.description}`
+    var playerRound2 = `${cardOne.points}`
+    playerGame();
 })
 
 //thirdDraw
 
 thirdDraw.addEventListener("click", (evt) => {
-    const card = getRandom();
-    thirdH1.textContent = `${card.name}`
-    pic3.src = `${card.link}`
-    description3.textContent = `${card.description}`
+    const cardThree = getRandom();
+    thirdH1.textContent = `${cardThree.name}`
+    pic3.src = `${cardThree.link}`
+    description3.textContent = `${cardThree.description}`
+    var playerRound3 = `${cardOne.points}`
+    playerGame();
 })
 
+
+
+// TO DO - PLANNING - GOALS TO COMPLETE BELOW - 
 //Create player constant variable
 //give set points
 
@@ -129,4 +153,4 @@ thirdDraw.addEventListener("click", (evt) => {
 // if player chooses continue then prompt player to click on card 2 
 
 //else if card points are higher than 3- SAY- your card is higher than three points, you will automatically
-//advance to next round/ secondDraw.
+//advance to next round/ secondDraw
