@@ -44,8 +44,8 @@ const card12 = new MajorArcana('Justice', 'cross-examination,law and order,delib
 const card13 = new MajorArcana('The Hanged Man', 'suspension,letting go of control, trust, enlightenment,sacrifice', -5, "images/13a_TheHangedMan.jpg");
 const card14 = new MajorArcana('Death', 'total transformation, cleansing,release,powerful change', 5, "images/14a_Death.jpg");
 const card15 = new MajorArcana('Temperance', 'merging of opposites,alchemy,balance,calmness,harmony,polar opposites', 5, "images/15b_Temperance.jpg");
-const card16 = new MajorArcana('The Devil', 'temptation,attraction,commitments,binding agreements,attachment', -15, "images/16a_TheDevil.jpg");
-const card17 = new MajorArcana('The Tower', 'surprise,disruption,dismantling the status quo,shock,a crisis,sudden developments', -25, "images/17b_TheTower.jpg");
+const card16 = new MajorArcana('The Devil', 'temptation,attraction,commitments,binding agreements,attachment', -5, "images/16a_TheDevil.jpg");
+const card17 = new MajorArcana('The Tower', 'surprise,disruption,dismantling the status quo,shock,a crisis,sudden developments', -5, "images/17b_TheTower.jpg");
 const card18 = new MajorArcana('The Stars', 'light at the end of the tunnel,guidance,hope,serenity', 4, "images/18_TheStars.jpg");
 const card19 = new MajorArcana('The Moon', 'shadow self,deception,fantasy,illusion,emotional sensitivities,fear,confusion', -3, "images/19_TheMoon.jpg");
 const card20 = new MajorArcana('The Sun', 'joy,happiness,success,reward,positive energy', 4, "images/20_TheSun.jpg");
@@ -56,6 +56,7 @@ const deckArray = [card1, card2, card3, card4, card5, card6, card7, card8, card9
     card11, card12, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22];
 
 //FUNCTIONS========================================================================================================================
+
 const getRandom = () => {
     let random = Math.floor(Math.random() * deckArray.length);
     if (deckArray[random].play === false) {
@@ -64,22 +65,58 @@ const getRandom = () => {
     }
 }
 
+let playerGame = () => {
+    var gameTotal = 12;
+    var playerRound = card.points
+    return gameTotal + playerRound
+}
+
 //EVENT LISTENERS=================================================================================================================
 
 // firstDraw.
-
 
 firstDraw.addEventListener("click", (evt) => {
     const card = getRandom();
     firstH1.textContent = `${card.name}`
     pic1.src = `${card.link}`
     description1.textContent = `${card.description}`
+    var playerRound = card.points
+    playerGame();
 })
+
+//secondDraw.
+
+secondDraw.addEventListener("click", (evt) => {
+    const card = getRandom();
+    secondH1.textContent = `${card.name}`
+    pic2.src = `${card.link}`
+    description2.textContent = `${card.description}`
+})
+
+//thirdDraw
+
+thirdDraw.addEventListener("click", (evt) => {
+    const card = getRandom();
+    thirdH1.textContent = `${card.name}`
+    pic3.src = `${card.link}`
+    description3.textContent = `${card.description}`
+})
+
+//Create player constant variable
+//give set points
+
+
+// the points the player has accumulated or lost will determine outcome of win/lose of game
+//Repeat the code/function from Draw 1 to select Random Card for Draw 2-Present
+// select random card for Draw 3- Future
+//Functions to create win/lose conditions of the game
+//functions/message to create keep going after draw 1, draw 2,
+//functions to choose retreat
 
 //WHAT I WANT TO HAPPEN AFTER PLAYER DRAWS FIRST CARD 
 
 // i need the computer to store the result of the first random card drawn and keep it on the screen unless player quits/resets game.
-//  then after i have saved that result in a variable, i want to use the result of the random card pulled from the first draw to 
+//  then after i have saved the first draw card result in a variable, i want to use the result of the random card pulled from the first draw to 
 // say:
 
 //if this card is less than 3 points - Oracle/spirit guides will prompt a message to user that says
@@ -92,44 +129,4 @@ firstDraw.addEventListener("click", (evt) => {
 // if player chooses continue then prompt player to click on card 2 
 
 //else if card points are higher than 3- SAY- your card is higher than three points, you will automatically
-//advance to next round 
-
-
-//secondDraw.
-
-secondDraw.addEventListener("click", (evt) => {
-    const card = getRandom();
-    secondH1.textContent = `${card.name}`
-    pic2.src = `${card.link}`
-    description2.textContent = `${card.description}`
-})
-
-
-
-//thirdDraw
-
-thirdDraw.addEventListener("click", (evt) => {
-    const card = getRandom();
-    thirdH1.textContent = `${card.name}`
-    pic3.src = `${card.link}`
-    description3.textContent = `${card.description}`
-})
-
-
-
-
-
-
-
-
-
-//Create player constant variable
-//give set points
-
-
-// the points the player has accumulated or lost will determine outcome of win/lose of game
-//Repeat the code/function from Draw 1 to select Random Card for Draw 2-Present
-// select random card for Draw 3- Future
-//Functions to create win/lose conditions of the game
-//functions/message to create keep going after draw 1, draw 2,
-//functions to choose retreat
+//advance to next round/ secondDraw.
