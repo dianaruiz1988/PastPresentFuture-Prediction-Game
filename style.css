@@ -14,6 +14,21 @@
   .header {
     grid-area: header;
   }
+  /* .score-button
+  font-size: 16px;
+  font-family: 
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 5px 10px;
+} */
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align:center;
+}
   .blog {
     grid-area: blog;
     display:flex;
@@ -22,15 +37,17 @@
     grid-area: footer;
   }
   img {
-    height: 300px;
-    width: 200px;
+    height: 400px;
+    width: 250px;
+    text-align: center;
   }
   .flex-items {
     border: solid 1px white;
     flex: 1;
     height:100%;
     background: rgb(255, 166, 0);
-  
+    justify-content: center;
+    text-align: center;
     
   }
   nav > a {
