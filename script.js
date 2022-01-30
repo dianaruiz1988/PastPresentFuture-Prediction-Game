@@ -4,6 +4,8 @@
 const firstDraw = document.getElementById("first-draw");
 const secondDraw = document.getElementById("second-draw")
 const thirdDraw = document.getElementById("third-draw")
+const retreat = document.getElementById("retreat")
+const restart = document.getElementById("restart")
 
 let pic1 = document.querySelector(".first")
 let firstH1 = document.querySelector(".firstH1")
@@ -19,6 +21,9 @@ let description3 = document.querySelector(".description3")
 
 let playerScore = document.getElementById("player-score")
 let gameMessage = document.getElementById("game-message")
+
+const footerElement = document.querySelector(".footer")
+const pElement = document.createElement("p")
 
 //CREATE DECK and CONSTANT PLAYER
 class MajorArcana {
@@ -95,17 +100,21 @@ const getRandom = () => {
 // return gameTotal + playerRound1 + playerRound2 + playerRound3
 // }
 
+
 let gameTotal
 let playerRound1
 let playerRound2
 let playerRound3
 
+
 const checkForWin = (Gtotal) => {
     if (Gtotal >= 10) {
-        gameMessage.innerText = "Game Result: you win!!"
+        pElement.innerText += "Game Result: you win!!"
+        footerElement.append(pElement)
     } else {
         (Gtotal < 10)
-        gameMessage.innerText = "Game Result: you lose"
+        pElement.innerText += "Game Result: you lose"
+        footerElement.append(pElement)
     }
 }
 
@@ -151,6 +160,16 @@ thirdDraw.addEventListener("click", (evt) => {
     checkForWin(gameTotal);
 })
 
+//retreatButton
+retreat.addEventListener("click", (evt) => {
+    location.reload();
+})
+
+
+//restartButton
+restart.addEventListener("click", (evt) => {
+    location.reload();
+})
 
 
 // TO DO - PLANNING - GOALS TO COMPLETE BELOW - 
