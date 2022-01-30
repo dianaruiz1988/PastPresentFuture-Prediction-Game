@@ -17,6 +17,9 @@ let pic3 = document.querySelector(".third")
 let thirdH1 = document.querySelector(".thirdH1")
 let description3 = document.querySelector(".description3")
 
+let playerScore = document.getElementById("player-score")
+let gameMessage = document.getElementById("game-message")
+
 //CREATE DECK and CONSTANT PLAYER
 class MajorArcana {
     constructor(name, description, points, link) {
@@ -64,32 +67,46 @@ const getRandom = () => {
         return deckArray[random];
     }
 }
-let playerScore = document.getElementById("player-score")
 
-const cardOne = 0;
-const cardTwo = 0;
-const cardThree = 0;
+// const cardOne = 0;
+// const cardTwo = 0;
+// const cardThree = 0;
 
+// const cardOne = getRandom();
+// const cardTwo = getRandom();
+// const cardThree = getRandom();
 
-let playerGame = () => {
-    var gameTotal = 0;
-    var playerRound1 = cardOne.points
-    var playerRound2 = cardTwo.points
-    var playerRound3 = cardThree.points
-    gameTotal += playerRound1 + playerRound2 + playerRound3
-    console.log(playerRound1, playerRound2, playerRound3)
-    playerScore.textContent = " " + gameTotal
-    return gameTotal + playerRound1 + playerRound2 + playerRound3
-}
+// let playerGame = () => {
+//     var gameTotal = 0;
+//     var playerRound1 = cardOne.points
+//     var playerRound2 = cardTwo.points
+//     var playerRound3 = cardThree.points
+//     gameTotal += playerRound1 + playerRound2 + playerRound3
+//     console.log(playerRound1, playerRound2, playerRound3)
+//     playerScore.textContent = " " + gameTotal
+//     return gameTotal + playerRound1 + playerRound2 + playerRound3
+// }
 
-let winGame = () => {
-    if (gameTotal >= 10);
-    return alert("You won")
-}
+// let playerGame = () => {
+// var gameTotal = 0;
+// var playerRound1 = cardOne.points
+// var playerRound2 = cardTwo.points
+// var playerRound3 = cardThree.points
+// return gameTotal + playerRound1 + playerRound2 + playerRound3
+// }
 
-let loseGame = () => {
-    if (gameTotal < 10);
-    return alert("you lost")
+let gameTotal
+let playerRound1
+let playerRound2
+let playerRound3
+
+const checkForWin = (Gtotal) => {
+    if (Gtotal >= 10) {
+        gameMessage.innerText = "Game Result: you win!!"
+    } else {
+        (Gtotal < 10)
+        gameMessage.innerText = "Game Result: you lose"
+    }
 }
 
 
@@ -102,9 +119,9 @@ firstDraw.addEventListener("click", (evt) => {
     firstH1.textContent = `${cardOne.name}`
     pic1.src = `${cardOne.link}`
     description1.textContent = `${cardOne.description}`
-    var playerRound1 = `${cardOne.points}`
-    console.log(playerRound1)
-    playerGame();
+    gameTotal = cardOne.points
+    console.log(cardOne.points)
+    playerScore.innerText = gameTotal
 })
 
 //secondDraw.
@@ -114,8 +131,10 @@ secondDraw.addEventListener("click", (evt) => {
     secondH1.textContent = `${cardTwo.name}`
     pic2.src = `${cardTwo.link}`
     description2.textContent = `${cardTwo.description}`
-    var playerRound2 = `${cardOne.points}`
-    playerGame();
+    var playerRound2 = `${cardTwo.points}`
+    console.log(cardTwo.points)
+    gameTotal += cardTwo.points
+    playerScore.innerText = gameTotal
 })
 
 //thirdDraw
@@ -125,15 +144,16 @@ thirdDraw.addEventListener("click", (evt) => {
     thirdH1.textContent = `${cardThree.name}`
     pic3.src = `${cardThree.link}`
     description3.textContent = `${cardThree.description}`
-    var playerRound3 = `${cardOne.points}`
-    playerGame();
+    var playerRound3 = `${cardThree.points}`
+    console.log(cardThree.points)
+    gameTotal += cardThree.points
+    playerScore.innerText = gameTotal
+    checkForWin(gameTotal);
 })
 
 
 
 // TO DO - PLANNING - GOALS TO COMPLETE BELOW - 
-//Create player constant variable
-//give set points
 
 
 // the points the player has accumulated or lost will determine outcome of win/lose of game
