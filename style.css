@@ -1,4 +1,9 @@
 
+body{
+  background-image: url("images/colorful.png");
+  background-size: cover;
+ 
+}
 .parent {
     display: grid;
     grid-template-columns: 1fr 100fr 1fr;
@@ -45,6 +50,7 @@
     grid-area: footer;
     text-align:center;
     border:solid;
+    background-color:white;
   }
 
   .buttons  {
