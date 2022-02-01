@@ -1,3 +1,4 @@
+
 .parent {
     display: grid;
     grid-template-columns: 1fr 100fr 1fr;
@@ -20,8 +21,7 @@
     background-position:right;
     background-size:cover;
     border:solid;
-    
-    
+    text-align:center;
   }
 
 .blog {
@@ -57,10 +57,6 @@
 
   }
 
-  #player-score {
-    background-color: white
-  }
-
   h1 {
     text-align: center;
     font-family: cursive;
@@ -77,9 +73,13 @@
     width: 250px;
     text-align: center;
     background-color: white;
-    background-image:url("images/00_Back.jpg")
+    background-image:url("images/background1.jpeg")
   }
 
+span {
+  background-color:white;
+}
 
-
-  
+ul {
+  list-style-type:none
+}

@@ -6,6 +6,7 @@ const secondDraw = document.getElementById("second-draw")
 const thirdDraw = document.getElementById("third-draw")
 const retreat = document.getElementById("retreat")
 const restart = document.getElementById("restart")
+let howTo = document.getElementById("how-to-play")
 
 let pic1 = document.querySelector(".first")
 let firstH1 = document.querySelector(".firstH1")
@@ -42,12 +43,12 @@ const card2 = new MajorArcana('The Magician', 'initiation,self-mastery,power,int
 const card3 = new MajorArcana('The High Priestess', 'intuition,secret knowledge,unconscious mind,study,learning', 5, "images/03_TheHighPriestess.jpg");
 const card4 = new MajorArcana('The Empress', 'growth, effortless attraction,beauty,feminine energy', 5, "images/04_TheEmpress.jpg");
 const card5 = new MajorArcana('The Emperor', 'authority,power,control,masculine energy,structure', 5, "images/05a_TheEmperor.jpg");
-const card6 = new MajorArcana('The Hierophant', 'tradition,following the rules, following the advice of elders or the wise ones', 4, "images/06a_TheHierophant.jpg");
+const card6 = new MajorArcana('The Hierophant', 'tradition,following the advice of elders or the wise ones', 4, "images/06a_TheHierophant.jpg");
 const card7 = new MajorArcana('The Lovers', 'choice,union,love,partnership', 5, "images/07a_TheLovers.jpg");
-const card8 = new MajorArcana('The Chariot', 'movement,travel,intention matched with purpose,determination', 4, "images/08_TheChariot.jpg");
+const card8 = new MajorArcana('The Chariot', 'movement,travel,intention matched with purpose', 4, "images/08_TheChariot.jpg");
 const card9 = new MajorArcana('Strength', 'confidence,strength,discipline,patience', 5, "images/09a_Strength.jpg");
-const card10 = new MajorArcana('The Hermit', 'self-reflection, alone time, meditation,pulling away from the rest of the world', -3, "images/10_TheHermit.jpg");
-const card11 = new MajorArcana('The Wheel', 'fate,divine timing,good luck, nothing lasts forever-good or bad', 3, "images/11a_TheWheel.jpg");
+const card10 = new MajorArcana('The Hermit', 'self-reflection, alone time, meditation', -3, "images/10_TheHermit.jpg");
+const card11 = new MajorArcana('The Wheel', 'fate,divine timing,good luck', 3, "images/11a_TheWheel.jpg");
 const card12 = new MajorArcana('Justice', 'cross-examination,law and order,deliberation,finding fairness', 4, "images/12_Justice.jpg");
 const card13 = new MajorArcana('The Hanged Man', 'suspension,letting go of control, trust, enlightenment,sacrifice', -5, "images/13a_TheHangedMan.jpg");
 const card14 = new MajorArcana('Death', 'total transformation, cleansing,release,powerful change', 5, "images/14a_Death.jpg");
@@ -74,17 +75,17 @@ const getRandom = () => {
 }
 
 
-// let gameTotal
+let gameTotal
 
 
 
 const checkForWin = (Gtotal) => {
     if (Gtotal >= 10) {
-        pElement.innerText += "Game Result: you win!!"
+        pElement.innerText += "Result: You win!!"
         footerElement.append(pElement)
     } else {
         (Gtotal < 10)
-        pElement.innerText += "Game Result: you lose"
+        pElement.innerText += " Result: you lose"
         footerElement.append(pElement)
     }
 }
@@ -129,6 +130,11 @@ thirdDraw.addEventListener("click", (evt) => {
     checkForWin(gameTotal);
 })
 
+// how to play Button
+howTo.addEventListener("click", (evt) => {
+    swal("How to Play", "...and here's the text!");
+})
+
 //retreatButton
 retreat.addEventListener("click", (evt) => {
     location.reload();
@@ -139,6 +145,7 @@ retreat.addEventListener("click", (evt) => {
 restart.addEventListener("click", (evt) => {
     location.reload();
 })
+
 
 
 // TO DO - PLANNING - GOALS TO COMPLETE BELOW - 
@@ -169,10 +176,12 @@ restart.addEventListener("click", (evt) => {
 //else if card points are higher than 3- SAY- your card is higher than three points, you will automatically
 //advance to next round/ secondDraw
 
+
+// SOURCES/RECOGNITION/SPECIAL SHOUTOUTS
 //sources: https://www.w3schools.com/jsref/met_loc_reload.asp
 
 
-
+// https://www.youtube.com/watch?v=43kJSL4sieE
 
 
 
