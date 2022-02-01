@@ -81,11 +81,11 @@ let gameTotal
 
 const checkForWin = (Gtotal) => {
     if (Gtotal >= 10) {
-        pElement.innerText += "Result: You win!!"
+        pElement.innerText += "Result: You WIN! The Oracle says: based on these cards, you are aligned with the universe and all shall be well!"
         footerElement.append(pElement)
     } else {
         (Gtotal < 10)
-        pElement.innerText += " Result: you lose"
+        pElement.innerText += " Result: You LOSE! The Oracle says: based on these cards, you are not aligned with the universe. Please meditate, light some candles, call on to the Oracle and spirit guides. Remember you are in control of your life path, and in power of the outcome. TRY AGAIN! "
         footerElement.append(pElement)
     }
 }
@@ -132,7 +132,7 @@ thirdDraw.addEventListener("click", (evt) => {
 
 // how to play Button
 howTo.addEventListener("click", (evt) => {
-    swal("How to Play", "...and here's the text!");
+    swal("Welcome to Ask the Oracle", "Ask the Oracle is a game where you can consult the Oracle and all your spirits guides in regards to any questions you may have. To begin game, first think of a question or situation you would like answered. If you do not have a specific question or situation in mind, the Oracle will give you a general life card reading based on the three cards you choose below. The three cards below, starting from left to right, represent your past, present and future. Now that you have your question in mind, the real fun can begin! Start by  FIRST clicking on the far left card, that represents your past, then the middle card- present, then the far right card-future card, in that order. Based on each card you draw, the Oracle will either add a point to your Player Score, or subtract points. Your player score will reflect the outcome of your reading, and if you have won or lost the game. If you get 10 or more points, you win, but if you get less than 10 points from the Oracle- you lose and the stars are currently not aligned in your favor.");
 })
 
 //retreatButton
@@ -178,10 +178,15 @@ restart.addEventListener("click", (evt) => {
 
 
 // SOURCES/RECOGNITION/SPECIAL SHOUTOUTS
+
 //sources: https://www.w3schools.com/jsref/met_loc_reload.asp
 
-
 // https://www.youtube.com/watch?v=43kJSL4sieE
+
+// My Group
+// Special shout out to Kenneth, Billal
+// Anthony Rondina for huge help/patience
+// Lucas Carlos for quick response and reply to my message asking for help
 
 
 
