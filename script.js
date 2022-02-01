@@ -73,38 +73,9 @@ const getRandom = () => {
     }
 }
 
-// const cardOne = 0;
-// const cardTwo = 0;
-// const cardThree = 0;
 
-// const cardOne = getRandom();
-// const cardTwo = getRandom();
-// const cardThree = getRandom();
+// let gameTotal
 
-// let playerGame = () => {
-//     var gameTotal = 0;
-//     var playerRound1 = cardOne.points
-//     var playerRound2 = cardTwo.points
-//     var playerRound3 = cardThree.points
-//     gameTotal += playerRound1 + playerRound2 + playerRound3
-//     console.log(playerRound1, playerRound2, playerRound3)
-//     playerScore.textContent = " " + gameTotal
-//     return gameTotal + playerRound1 + playerRound2 + playerRound3
-// }
-
-// let playerGame = () => {
-// var gameTotal = 0;
-// var playerRound1 = cardOne.points
-// var playerRound2 = cardTwo.points
-// var playerRound3 = cardThree.points
-// return gameTotal + playerRound1 + playerRound2 + playerRound3
-// }
-
-
-let gameTotal
-let playerRound1
-let playerRound2
-let playerRound3
 
 
 const checkForWin = (Gtotal) => {
@@ -140,9 +111,8 @@ secondDraw.addEventListener("click", (evt) => {
     secondH1.textContent = `${cardTwo.name}`
     pic2.src = `${cardTwo.link}`
     description2.textContent = `${cardTwo.description}`
-    var playerRound2 = `${cardTwo.points}`
-    console.log(cardTwo.points)
     gameTotal += cardTwo.points
+    console.log(cardTwo.points)
     playerScore.innerText = gameTotal
 })
 
@@ -153,9 +123,8 @@ thirdDraw.addEventListener("click", (evt) => {
     thirdH1.textContent = `${cardThree.name}`
     pic3.src = `${cardThree.link}`
     description3.textContent = `${cardThree.description}`
-    var playerRound3 = `${cardThree.points}`
-    console.log(cardThree.points)
     gameTotal += cardThree.points
+    console.log(cardThree.points)
     playerScore.innerText = gameTotal
     checkForWin(gameTotal);
 })
@@ -199,3 +168,12 @@ restart.addEventListener("click", (evt) => {
 
 //else if card points are higher than 3- SAY- your card is higher than three points, you will automatically
 //advance to next round/ secondDraw
+
+//sources: https://www.w3schools.com/jsref/met_loc_reload.asp
+
+
+
+
+
+
+
